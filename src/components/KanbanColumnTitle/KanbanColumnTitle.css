@@ -1,0 +1,9 @@
+.kanban-column__counter {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70%;
+  background-color: #e0e0e0;
+}

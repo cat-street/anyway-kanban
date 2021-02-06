@@ -35,7 +35,13 @@
       "project": "./tsconfig.json"
     },
     "rules": {
-      "react/react-in-jsx-scope": "off"
+      "react/react-in-jsx-scope": "off",
+      "react/require-default-props": [
+        "error",
+        {
+          "ignoreFunctionalComponents": true
+        }
+      ]
     }
   },
   "browserslist": {

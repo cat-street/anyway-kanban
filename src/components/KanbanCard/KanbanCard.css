@@ -1,0 +1,7 @@
+.kanban-card {
+  min-height: 4rem;
+}
+
+.kanban-card__info {
+  font-size: 90%;
+}
