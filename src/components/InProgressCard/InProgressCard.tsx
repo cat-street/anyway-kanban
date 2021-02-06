@@ -3,9 +3,19 @@ import Button from 'react-bootstrap/Button';
 import KanbanCard from '../KanbanCard/KanbanCard';
 import { CardProps } from '../../models/cardProps.model';
 
-const InProgressCard: FC<CardProps> = ({ text, info }: CardProps) => (
-  <KanbanCard text={text} info={info}>
-    <Button size="sm" variant="success" className="m-2">
+const InProgressCard: FC<CardProps> = ({
+  id,
+  text,
+  date,
+  onFinish,
+}: CardProps) => (
+  <KanbanCard text={text} info={date}>
+    <Button
+      size="sm"
+      variant="success"
+      className="m-2"
+      onClick={() => onFinish(id)}
+    >
       Resolve
     </Button>
   </KanbanCard>
