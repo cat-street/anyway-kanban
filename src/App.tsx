@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import CardColumns from 'react-bootstrap/CardColumns';
 import Todo from './components/Todo/Todo';
@@ -11,16 +11,31 @@ import { apiRoutes } from './utils/config';
 import './App.css';
 
 const App: FC = () => {
-  const [todo, setTodo] = useState<KanbanItem[]>([
-    { id: '1', task: 'Build a house' },
-    { id: '2', task: 'Plant a tree' },
-    { id: '3', task: 'Go to grocery' },
-  ]);
+  const [todo, setTodo] = useState<KanbanItem[]>([]);
   const [inProgress, setInProgress] = useState<KanbanItem[]>([]);
-  const [done, setDone] = useState<KanbanItem[]>([
-    { id: '4', task: 'Take out the trash', price: '$5.15' },
-    { id: '5', task: 'Walk the dog', price: '$11.87' },
-  ]);
+  const [done, setDone] = useState<KanbanItem[]>([]);
+
+  const getInitialData = async () => {
+    try {
+      const kanbanData = await api.getData(apiRoutes.MAIN);
+      setTodo(
+        kanbanData.filter((el: Record<string, any>) => el.status === 'todo'),
+      );
+      setInProgress(
+        kanbanData.filter((el: Record<string, any>) => el.status === 'progress'),
+      );
+      setDone(
+        kanbanData.filter((el: Record<string, any>) => el.status === 'done'),
+      );
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error.message);
+    }
+  };
+
+  useEffect(() => {
+    getInitialData();
+  }, []);
 
   const handleAddTask = async (task: string) => {
     const id = `_${Math.random().toString(36).substr(2, 9)}`;

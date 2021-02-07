@@ -7,18 +7,26 @@ import formatTime from '../../utils/formatTime';
 const InProgressCard: FC<CardProps> = ({
   id,
   text,
+  date,
   onFinish,
 }: CardProps) => {
   const [timer, setTimer] = useState<number>(0);
 
+  const setTime = (currentDate: string) => {
+    const seconds = new Date(currentDate).getTime();
+    const elapsed = (Date.now() - seconds) / 1000;
+    setTimer(elapsed);
+  };
+
   useEffect(() => {
+    setTime(date!);
     const timerId = window.setInterval(() => {
       setTimer((prevTimer) => prevTimer + 1);
     }, 1000);
     return () => {
       window.clearInterval(timerId);
     };
-  }, []);
+  }, [date]);
 
   return (
     <>
