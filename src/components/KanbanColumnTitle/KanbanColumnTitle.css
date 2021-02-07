@@ -1,9 +1,14 @@
+.kanban-column__title {
+  font-size: 105%;
+  margin-top: .3rem;
+}
+
 .kanban-column__counter {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 70%;
   background-color: #e0e0e0;
+  font-size: 90%;
 }

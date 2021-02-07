@@ -51,9 +51,9 @@ const App: FC = () => {
   };
 
   return (
-    <Container className="app p-4 min-vh-100 d-flex flex-column">
-      <h6>Anyway Labs Test Project</h6>
-      <p className="text-muted">Just some good deeds</p>
+    <Container className="app py-4 min-vh-100 d-flex flex-column">
+      <h5 className="app__header">Anyway Labs Test Project</h5>
+      <p className="app__sub-header text-muted">Just some good deeds</p>
       <CardColumns className="flex-grow-1 d-flex align-items-stretch">
         <Todo list={todo} onAdd={handleAddTask} onStart={handleStartTask} />
         <InProgress list={inProgress} onFinish={handleFinishTask} />

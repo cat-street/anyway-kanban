@@ -6,7 +6,7 @@ import SectionProps from '../../models/sectionProps.model';
 
 const InProgress: FC<SectionProps> = ({ list }: SectionProps) => (
   <KanbanColumn>
-    <KanbanColumnTitle count={2} title="Done" />
+    <KanbanColumnTitle count={list.length} title="Done" />
     {list.map((task) => (
       <DoneCard
         key={`${task.id}${task.name}`}

@@ -6,9 +6,8 @@ import { CardProps } from '../../models/cardProps.model';
 const TodoCard: FC<CardProps> = ({ id, text, onStart }: CardProps) => (
   <KanbanCard text={text}>
     <Button
-      size="sm"
       variant="primary"
-      className="m-2"
+      className="m-2 mr-3"
       onClick={() => onStart(id)}
     >
       Start

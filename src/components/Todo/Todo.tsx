@@ -6,6 +6,7 @@ import KanbanColumn from '../KanbanColumn/KanbanColumn';
 import KanbanColumnTitle from '../KanbanColumnTitle/KanbanColumnTitle';
 import SectionProps from '../../models/sectionProps.model';
 import NewTaskCard from '../NewTaskCard/NewTaskCard';
+import './Todo.css';
 
 const Todo: FC<SectionProps> = ({ list, onAdd, onStart }: SectionProps) => {
   const [showNewTaskCard, setNewTaskCard] = useState<boolean>(false);
@@ -25,12 +26,11 @@ const Todo: FC<SectionProps> = ({ list, onAdd, onStart }: SectionProps) => {
         <NewTaskCard onAdd={onAdd} showCard={setNewTaskCard} />
       )}
       <Button
-        size="sm"
         variant="outline-dark"
-        className="my-3 mx-auto d-flex align-items-center"
+        className="todo__new-task-button my-3 mx-auto pl-2 pr-3 d-flex align-items-center"
         onClick={() => setNewTaskCard(true)}
       >
-        <Plus size={24} />
+        <Plus className="todo__plus-symbol" size={24} />
         <span>New task</span>
       </Button>
     </KanbanColumn>

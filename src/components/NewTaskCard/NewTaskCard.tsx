@@ -26,7 +26,6 @@ const NewTaskCard: FC<NewTaskCardProps> = ({
         onSubmit={handleSubmit}
       >
         <Form.Control
-          className="form-control-sm"
           type="text"
           name="task"
           placeholder="Add a new task"
@@ -34,9 +33,8 @@ const NewTaskCard: FC<NewTaskCardProps> = ({
         />
         <Button
           type="submit"
-          size="sm"
           variant="outline-primary"
-          className="m-2"
+          className="m-2 mr-3"
           onClick={() => onAdd}
         >
           Add

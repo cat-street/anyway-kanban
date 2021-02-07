@@ -24,9 +24,8 @@ const InProgressCard: FC<CardProps> = ({
     <>
       <KanbanCard text={text} info={formatTime(timer)}>
         <Button
-          size="sm"
           variant="success"
-          className="m-2"
+          className="m-2 mr-3"
           onClick={() => onFinish(id)}
         >
           Resolve
