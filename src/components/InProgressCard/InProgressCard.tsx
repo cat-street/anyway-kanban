@@ -1,24 +1,39 @@
-import { FC } from 'react';
+import { FC, useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import KanbanCard from '../KanbanCard/KanbanCard';
 import { CardProps } from '../../models/cardProps.model';
+import formatTime from '../../utils/formatTime';
 
 const InProgressCard: FC<CardProps> = ({
   id,
   text,
-  date,
   onFinish,
-}: CardProps) => (
-  <KanbanCard text={text} info={date}>
-    <Button
-      size="sm"
-      variant="success"
-      className="m-2"
-      onClick={() => onFinish(id)}
-    >
-      Resolve
-    </Button>
-  </KanbanCard>
-);
+}: CardProps) => {
+  const [timer, setTimer] = useState<number>(0);
+
+  useEffect(() => {
+    const timerId = window.setInterval(() => {
+      setTimer((prevTimer) => prevTimer + 1);
+    }, 1000);
+    return () => {
+      window.clearInterval(timerId);
+    };
+  }, []);
+
+  return (
+    <>
+      <KanbanCard text={text} info={formatTime(timer)}>
+        <Button
+          size="sm"
+          variant="success"
+          className="m-2"
+          onClick={() => onFinish(id)}
+        >
+          Resolve
+        </Button>
+      </KanbanCard>
+    </>
+  );
+};
 
 export default InProgressCard;

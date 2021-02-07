@@ -45,7 +45,7 @@ const App: FC = () => {
 
   const handleFinishTask = (id: string) => {
     const task: KanbanItem = inProgress.find((el) => el.id === id)!;
-    const price: string = calculatePrice(task.date!)!;
+    const price: string = calculatePrice(task.date!);
     setInProgress((prevState) => prevState.filter((el) => el.id !== id));
     setDone((prevState) => [...prevState, { ...task, price }]);
   };
