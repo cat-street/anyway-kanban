@@ -16,9 +16,9 @@ const Todo: FC<SectionProps> = ({ list, onAdd, onStart }: SectionProps) => {
       <KanbanColumnTitle count={list.length} title="To do" />
       {list.map((task) => (
         <TodoCard
-          key={`${task.id}${task.name}`}
+          key={`${task.id}${task.task}`}
           id={task.id}
-          text={task.name}
+          text={task.task}
           onStart={onStart}
         />
       ))}

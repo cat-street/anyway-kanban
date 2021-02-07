@@ -1,7 +1,7 @@
 export interface KanbanItem {
   id: string,
-  name: string,
-  date?: Date,
-  finished?: Date,
+  task: string,
+  date?: string,
+  finished?: string,
   price?: string
 }

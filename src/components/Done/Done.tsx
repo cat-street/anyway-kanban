@@ -9,9 +9,9 @@ const InProgress: FC<SectionProps> = ({ list }: SectionProps) => (
     <KanbanColumnTitle count={list.length} title="Done" />
     {list.map((task) => (
       <DoneCard
-        key={`${task.id}${task.name}`}
+        key={`${task.id}${task.task}`}
         id={task.id}
-        text={task.name}
+        text={task.task}
         price={task.price}
       />
     ))}

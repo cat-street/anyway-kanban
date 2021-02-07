@@ -4,8 +4,8 @@ class Api {
   private baseUrl: string;
 
   private headers: {
-    'Content-Type': string,
-    Accept: string
+    'Content-Type': string;
+    Accept: string;
   };
 
   constructor(parameters: any) {
@@ -26,11 +26,12 @@ class Api {
     throw new Error(message);
   }
 
-  async postData(path: string, task: string) {
+  async postData(path: string, newTask: { id: string; task: string }) {
+    const { id, task } = newTask;
     const res = await fetch(`${this.baseUrl}${path}`, {
-      method: 'PATCH',
+      method: 'POST',
       headers: this.headers,
-      body: JSON.stringify({ task }),
+      body: JSON.stringify({ id, task }),
     });
     if (res.ok) {
       return res.json();
@@ -40,12 +41,15 @@ class Api {
     throw new Error(message);
   }
 
-  async patchData(path: string, task: { id: string, status: string }) {
-    const { id, status } = task;
+  async patchData(
+    path: string,
+    task: { id: string; date: string; status: string },
+  ) {
+    const { id, date, status } = task;
     const res = await fetch(`${this.baseUrl}${path}`, {
       method: 'PATCH',
       headers: this.headers,
-      body: JSON.stringify({ id, status }),
+      body: JSON.stringify({ id, date, status }),
     });
     if (res.ok) {
       return res.json();
