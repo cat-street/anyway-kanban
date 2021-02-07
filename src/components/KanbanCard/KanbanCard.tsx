@@ -4,14 +4,14 @@ import { CardText } from 'react-bootstrap-icons';
 import './KanbanCard.css';
 
 type KanbanCardProps = {
-  text: string;
+  text?: string;
   info?: string;
   children?: ReactNode;
 };
 
 const KanbanCard: FC<KanbanCardProps> = ({
   text,
-  info = '',
+  info,
   children,
 }: KanbanCardProps) => (
   <Card className="kanban-card d-flex flex-row p-2 justify-content-between align-items-center">
