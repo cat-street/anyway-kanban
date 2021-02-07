@@ -3,4 +3,5 @@ export interface CardProps extends Record<string, any> {
   text: string;
   info?: string;
   date?: string;
+  finished?: string;
 }

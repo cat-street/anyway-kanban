@@ -12,7 +12,8 @@ const InProgress: FC<SectionProps> = ({ list }: SectionProps) => (
         key={`${task.id}${task.task}`}
         id={task.id}
         text={task.task}
-        price={task.price}
+        date={task.date}
+        finished={task.finished}
       />
     ))}
   </KanbanColumn>

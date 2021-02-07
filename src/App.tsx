@@ -5,7 +5,6 @@ import Todo from './components/Todo/Todo';
 import InProgress from './components/InProgress/InProgress';
 import Done from './components/Done/Done';
 import { KanbanItem } from './models/kanban.model';
-import hourPrice from './constants/hourPrice';
 import api from './utils/api';
 import { apiRoutes } from './utils/config';
 import './App.css';
@@ -67,20 +66,15 @@ const App: FC = () => {
       if (startTaskStatus) {
         const task: KanbanItem = todo.find((el) => el.id === id)!;
         setTodo((prevState) => prevState.filter((el) => el.id !== id));
-        setInProgress((prevState) => [...prevState, { ...task, date }]);
+        setInProgress((prevState) => [
+          ...prevState,
+          { ...task, date, status: 'progress' },
+        ]);
       }
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error.message);
     }
-  };
-
-  const calculatePrice = (startDate: string, finishDate: string): string => {
-    const startSeconds = new Date(startDate).getTime();
-    const finishSeconds = new Date(finishDate).getTime();
-    const hours: number = (finishSeconds - startSeconds) / 1000 / 60 / 60;
-    const price: string = `$${(hourPrice * hours).toFixed(2)}`;
-    return price;
   };
 
   const handleFinishTask = async (id: string) => {
@@ -93,9 +87,11 @@ const App: FC = () => {
       });
       if (finishTaskStatus) {
         const task: KanbanItem = inProgress.find((el) => el.id === id)!;
-        const price: string = calculatePrice(task.date!, date);
         setInProgress((prevState) => prevState.filter((el) => el.id !== id));
-        setDone((prevState) => [...prevState, { ...task, price }]);
+        setDone((prevState) => [
+          ...prevState,
+          { ...task, finished: date, status: 'done' },
+        ]);
       }
     } catch (error) {
       // eslint-disable-next-line no-console
