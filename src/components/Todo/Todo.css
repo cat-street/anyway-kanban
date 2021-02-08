@@ -5,3 +5,7 @@
 .app .todo__new-task-button {
   background-color: #fff;
 }
+
+.app .todo__new-task-button:hover {
+  background-color: #343A40;
+}
