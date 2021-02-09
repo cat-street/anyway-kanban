@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
-import CardColumns from 'react-bootstrap/CardColumns';
+import Row from 'react-bootstrap/Row';
 import Todo from './components/Todo/Todo';
 import InProgress from './components/InProgress/InProgress';
 import Done from './components/Done/Done';
@@ -100,14 +100,14 @@ const App: FC = () => {
   };
 
   return (
-    <Container className="app py-4 min-vh-100 d-flex flex-column">
+    <Container fluid="lg" className="app pt-4 pb-1 min-vh-100 d-flex flex-column">
       <h5 className="app__header">Anyway Labs Test Project</h5>
       <p className="app__sub-header text-muted">Just some good deeds</p>
-      <CardColumns className="flex-grow-1 d-flex align-items-stretch">
+      <Row className="d-flex flex-grow-1 px-1">
         <Todo list={todo} onAdd={handleAddTask} onStart={handleStartTask} />
         <InProgress list={inProgress} onFinish={handleFinishTask} />
         <Done list={done} />
-      </CardColumns>
+      </Row>
     </Container>
   );
 };

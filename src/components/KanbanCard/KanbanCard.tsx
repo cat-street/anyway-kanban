@@ -17,7 +17,7 @@ const KanbanCard: FC<KanbanCardProps> = ({
   <Card className="kanban-card d-flex flex-row p-2 justify-content-between align-items-center">
     <div className="align-self-start">
       <p className="kanban-card__text d-flex align-items-center mb-2">
-        <CardText className="mr-2" />
+        <CardText className="mr-2 flex-shrink-0" />
         {text}
       </p>
       {info && <p className="kanban-card__info ml-4 my-0 text-muted">{info}</p>}

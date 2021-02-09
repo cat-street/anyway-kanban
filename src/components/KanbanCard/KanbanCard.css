@@ -1,5 +1,6 @@
 .kanban-card {
   min-height: 5rem;
+  margin-bottom: .75rem;
 }
 
 .kanban-card__text {
