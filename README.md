@@ -5,7 +5,7 @@
 
 Anyway Kanban sample job tasks application, build to use with an external API. Functionality includes creating new tasks, starting existing tasks with a time counter, and finishing tasks with calculating task price based on a hardcoded price/hour value.
 
-* Current live version at [https://anyway.catlogic.ru/](https://anyway.catlogic.ru/)
+* Current live version at [https://cat-street.github.io/anyway-kanban/](https://cat-street.github.io/anyway-kanban/)
 
 ---
 ## Technology used
