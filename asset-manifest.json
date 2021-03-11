@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/anyway-kanban/static/css/main.8174b097.chunk.css",
+    "main.js": "/anyway-kanban/static/js/main.8c39728f.chunk.js",
+    "main.js.map": "/anyway-kanban/static/js/main.8c39728f.chunk.js.map",
+    "runtime-main.js": "/anyway-kanban/static/js/runtime-main.4be4efce.js",
+    "runtime-main.js.map": "/anyway-kanban/static/js/runtime-main.4be4efce.js.map",
+    "static/css/2.150d169a.chunk.css": "/anyway-kanban/static/css/2.150d169a.chunk.css",
+    "static/js/2.8b3203ec.chunk.js": "/anyway-kanban/static/js/2.8b3203ec.chunk.js",
+    "static/js/2.8b3203ec.chunk.js.map": "/anyway-kanban/static/js/2.8b3203ec.chunk.js.map",
+    "index.html": "/anyway-kanban/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/anyway-kanban/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.8174b097.chunk.css.map": "/anyway-kanban/static/css/main.8174b097.chunk.css.map",
+    "static/js/2.8b3203ec.chunk.js.LICENSE.txt": "/anyway-kanban/static/js/2.8b3203ec.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4be4efce.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.8b3203ec.chunk.js",
+    "static/css/main.8174b097.chunk.css",
+    "static/js/main.8c39728f.chunk.js"
+  ]
+}
