@@ -20,28 +20,4 @@ Anyway Kanban sample job tasks application, build to use with an external API. F
 
 Sample Node/Express REST API (read only, no database) is used.
 
-* (CURRENTLY OFFLINE)
-    * GET /kanban - get tasks
-    * POST /kanban - create a task
-    ```json
-    {
-      "id": "123456",
-      "task": "Feed the cat"
-    }
-    ```
-    * PATCH /kanban/start - start a task
-    ```json
-    {
-      "id": "123456",
-      "date": "2021-02-07T19:24:00",
-      "status": "progress"
-    }
-    ```
-    * PATCH /kanban/finish - finish a task
-    ```json
-    {
-      "id": "123456",
-      "date": "2021-02-07T19:24:00",
-      "status": "done"
-    }
-    ```
+* (CURRENTLY OFFLINE - [https://github.com/cat-street/anyway-kanban-api](https://github.com/cat-street/anyway-kanban-api))
